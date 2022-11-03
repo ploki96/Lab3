@@ -2,8 +2,8 @@ package classes;
 
 
 public class Node {
-	int weight;
-	char c;
+	public int weight;
+	public char c;
 	Node left, right;
 	
 	public Node(char c, int weight, Node left, Node right) {

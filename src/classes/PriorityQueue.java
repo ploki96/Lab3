@@ -40,6 +40,10 @@ public class PriorityQueue<E> {
 		data.set(second, temp);
 	}
 	
+	public E peek() {
+		return data.get(0);
+	}
+	
 	public E poll() {
 		if(data.isEmpty()) {
 			return null;
@@ -82,6 +86,10 @@ public class PriorityQueue<E> {
 	public Iterator<E> iterator() {
 		return data.iterator();
 	}
+
+	//public E peek() {
+		// TODO Auto-generated method stub
+		
 	
 	
 	
