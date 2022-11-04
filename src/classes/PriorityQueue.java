@@ -1,27 +1,27 @@
 package classes;
 
-import java.util.AbstractQueue;
 import java.util.ArrayList;
-import java.util.Queue;
 import java.util.Comparator;
-import java.util.Iterator;
 
 public class PriorityQueue<E> {
 	// Data fields
-	private ArrayList<E> data;
+	public ArrayList<E> data;
 	Comparator<E> comp;
 	
+	// constructors
 	@SuppressWarnings("unchecked")
 	public PriorityQueue() {
 		data = new ArrayList<>();
 		comp = (left, right) -> ((Comparable<E>) left).compareTo(right);
 	}
 	
+	
 	public PriorityQueue(Comparator<E> comp) {
 		data = new ArrayList<>();
 		this.comp = comp;
 	}
 	
+	// offer function
 	public boolean offer(E item) {
 		data.add(item);
 		int child = data.size() -1;
@@ -34,16 +34,19 @@ public class PriorityQueue<E> {
 		return true;
 	}
 	
+	// swap function
 	public void swap(int first, int second) {
 		E temp = data.get(first);
 		data.set(first, data.get(second));
 		data.set(second, temp);
 	}
 	
+	// peek function
 	public E peek() {
 		return data.get(0);
 	}
 	
+	// poll function
 	public E poll() {
 		if(data.isEmpty()) {
 			return null;
@@ -75,20 +78,17 @@ public class PriorityQueue<E> {
 		return result;
 	}
 	
+	// size function
 	public int size() {
 		return data.size();
 	}
 	
+	// isEmpty function
 	public boolean isEmpty() {
 		return data.isEmpty();
 	}
 	
-	public Iterator<E> iterator() {
-		return data.iterator();
-	}
 
-	//public E peek() {
-		// TODO Auto-generated method stub
 		
 	
 	
